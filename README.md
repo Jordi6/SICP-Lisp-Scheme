@@ -1,6 +1,9 @@
-Jordi Becerril Enriquez
-Apr 13, 2024
-General notes about Lisp and stuff.
+Jordi Becerril Enriquez  
+
+Apr 13, 2024  
+
+General notes about Lisp and stuff.  
+
 
 
 
