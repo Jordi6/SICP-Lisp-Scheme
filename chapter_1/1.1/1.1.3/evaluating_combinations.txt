@@ -1,0 +1,86 @@
+Jordi Becerril Enriquez
+November 01, 2024
+evaluating combinations
+
+
+- One of the goals in this chapter is to isolate issues about thinking 
+procedurally. 
+
+- In evaluating combinations, the interpreter is itself following a procedure.
+
+-- To evaluate a combination, do the following:
+
+1. Evaluate the subexpression of the combination.
+
+2. Apply the procedure that is the value of the leftmost subexpression (the operator)
+to the arguments that are the values of the other subexpressions (the operands). 
+
+
+
+---
+(+ 2(* 3 4))
+
+-- Step 1: evaluate the subexpressions
+- the operator +: is recognized as the addition procedure in Scheme. 
+- the first argument 2: is a literal number, so it evaluates to itself, 2. 
+- the second argument (* 3 4): this is another combination, so we need to recursively 
+apply the same two step process to it:
+  - Recursive evaluation of (* 3 4):
+  - 1. Evaluate the subexpresions of (* 3 4)
+  - the operator *: is recognized as the multiplication procedure.
+  - the first argument 3: evaluates to 3.
+  - the second argument 4: evaluates to 4.
+
+  - 2. Apply the procedure:
+  - now that we know * is the operator and 3 and 4 are the arguments, we apply * to 3 
+  and 4, which gives us 12. 
+
+-- Step 2: apply the operator to the operands
+- finally, we apply + to the arguments 2 and 12, which gives us the result 14.
+---
+
+
+
+Even this simple rule illustrates some important points about processes in general.
+
+Firt, observe that the first step dictates that in order to accomplish the evaluation 
+process for a combination we must first perform the evaluation process on each element 
+of the combination. 
+
+Thus, the evaluation rule is recursive in nature; that is, it includes, as one of
+its steps, the need to invoke the rule itself.
+
+Notice how succintcly the ideea of recursion can be used to express what, in the case
+of a deeply nested combination, would otherwise be viewed as a rather complicated 
+process.
+
+For example, evaluating:
+--
+(* (+ 2 (* 4 6))
+   (+ 3 5 7))
+--
+requires that the evaluation rule be applied to four different combinations. We can
+obtain a picture of this process by representing the combination in the form of a tree.
+
+---
+Figure: 1.1
+                 390
+           /  \         \
+          *    26         15
+             / \ \      / | | \
+            +  2  24   +  3 5  7
+                 / | \ 
+                *  4  6
+---
+
+Each combination is represented by a node with branches corresponding to the operator and
+the operands of the combination stemming from it.
+
+
+
+
+
+
+
+
+

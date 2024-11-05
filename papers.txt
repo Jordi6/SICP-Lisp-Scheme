@@ -1,0 +1,16 @@
+Jordi Becerril Enriquez
+October 22, 2024
+papers about lisp to read
+
+
+
+- "Re-cursive Functions of Symbolic Expressions and eir Computation by Machine" - McCarthy
+
+
+- "Lisp 1 Programmer’s Manual appeared in 1960, and the Lisp 1.5 Programmer’s Manual" - McCarthy
+
+
+- "The Supercomputer Toolkit: A General Framework for Special-Purpose Computing" 
+file:///home/tonystark/Downloads/HPL-94-30_The_Supercomputer_Toolkit_List.pdf
+
+
