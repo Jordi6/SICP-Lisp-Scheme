@@ -7,7 +7,6 @@ General notes about Lisp and stuff.
 
 
 
-
 # my goals for learning lisp: 
 
 - have fun with computers again.
