@@ -1,0 +1,76 @@
+Jordi Becerril Enriquez
+November 08, 2024
+The Substitution Model for Procedure Applicaiton
+
+
+- To evaluate a combination whose operator names a compound procedure,
+the interpreter follows much the same process as for combinations whose
+operators name primitive procedures.
+
+That is, the interpreter evaluates the elements of the combination and applies
+the procedure (which is the value of the operator of the combination) to the
+arguments (which are the values of the operands of the combination).
+
+
+We can assume that the mechanism for applying primitive procedures to
+arguments is built into the interpreter. For compound procedures, the
+applicatoin process is as follows:
+
+- to apply a compound procedure to agruments, evaluate the body of the procedure 
+with each formal parameter replaced by the corresponding argument.
+
+To illustrate this process, let's evaluate the combination:
+(f 5)
+
+where f is the procedure defined in "Section 1.1.4". We begin by retrieving
+the body of f:
+
+(sum-of-squares (+ a 1) (* a 2))
+
+Then we replace the formal parameter a by the argument 5:
+
+(sum-of-squares (+ 5 1) (* 5 2))
+
+Thus the problem reduces to the evaluation of a combination with two operands 
+and an operator sum-of-squares. Evaluating this combination invloves three
+subproblems. 
+
+We must evaluate the operator to get the procedure to be applied,  
+and we must evalute the operands to get the arguments. 
+
+- now (+ 5 1) produces 6 
+- and (* 5 2) produces 10
+
+so we must apply the sum-of-squares procedure to 6 and 10. These values
+are substituted for the formal parameters x and y in the body of
+sum-of-squares, reducing the expression to:
+
+(+ (* 6 6) (* 10 10))
+
+which reduces by multiplication to:
+
+(+ 36 100)
+
+and finally to:
+136
+
+
+- The process we have just described is called the "substitution model" for
+procedure application. It can be taken as a model that determines the "meaning"
+of procedure applicaiton, insofar as the procedures in this chapter are concerned.
+However, there are two points that should be stressed:
+
+- the purpose of the substitution is to help us think about procedure application,
+not to provide a description of how the interpreter really works.
+
+- over the course of this book, we will be presented with a sequence of increasinly 
+elaborate models of how interpreters work...
+The substitution model is only the first of these models-a way to get started thinking 
+formally about the evaluation process.
+
+
+
+
+
+
+
