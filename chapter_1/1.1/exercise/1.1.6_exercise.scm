@@ -44,13 +44,13 @@
 
 
 ; checks
-(display (= (func 1 2 3) (sum-square 2 3)))
+(display (= (procedure 1 2 3) (sum-square 2 3)))
 (newline)
 
-(display (= (func 2 3 1) (sum-square 3 2)))
+(display (= (procedure 2 3 1) (sum-square 3 2)))
 (newline)
 
-(display (= (func 2 3 1) (sum-square 3 2)))
+(display (= (procedure 2 3 1) (sum-square 3 2)))
 (newline)
 
 
