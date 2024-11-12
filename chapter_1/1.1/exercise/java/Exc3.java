@@ -1,6 +1,6 @@
 // Jordi Becerril Enriquez
 // November 10, 2024
-// Exercise
+// Exercise 1.3
 
 
 public class Exc3 {
